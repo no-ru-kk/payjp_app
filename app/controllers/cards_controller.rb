@@ -10,7 +10,8 @@ class CardsController < ApplicationController
     )
 
     card = Card.new( # トークン化されたカード情報を保存する
-      card_token: params[:card_token], # カードトークン
+      # card_token: params[:card_token], # カードトークン
+      card_token: customer.default_card,
       customer_token: customer.id, # 顧客トークン
       user_id: current_user.id # ログインしているユーザー
     )
